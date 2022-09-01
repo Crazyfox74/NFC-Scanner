@@ -1,0 +1,685 @@
+Archive member included to satisfy reference by file (symbol)
+
+c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memcmp.o)
+                              main.o (memcmp)
+c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memcpy.o)
+                              main.o (memcpy)
+c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memmove.o)
+                              main.o (memmove)
+c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memset.o)
+                              main.o (memset)
+c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strcat.o)
+                              main.o (strcat)
+c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strcpy.o)
+                              main.o (strcpy)
+c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strlcpy.o)
+                              main.o (strlcpy)
+c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strlen-stub.o)
+                              main.o (strlen)
+c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strpbrk.o)
+                              main.o (strpbrk)
+c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strstr.o)
+                              main.o (strstr)
+c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strtok.o)
+                              main.o (strtok)
+c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strtok_r.o)
+                              c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strtok.o) (__strtok_r)
+c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-impure.o)
+                              c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strtok.o) (_impure_ptr)
+c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strchr.o)
+                              c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strstr.o) (strchr)
+c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strnlen.o)
+                              c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strstr.o) (strnlen)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x08000000         0x00010000         xr
+SRAM             0x20000000         0x00005000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD main.o
+LOAD startup.o
+LOAD fifo.o
+LOAD ../Libraries/CMSIS/Source/system_stm32f10x.o
+LOAD ../Libraries/SPL/src/misc.o
+LOAD ../Libraries/SPL/src/stm32f10x_rcc.o
+LOAD ../Libraries/SPL/src/stm32f10x_gpio.o
+LOAD ../Libraries/SPL/src/stm32f10x_i2c.o
+LOAD ../Libraries/SPL/src/stm32f10x_usart.o
+LOAD ../Libraries/SPL/src/stm32f10x_spi.o
+START GROUP
+LOAD c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp\libgcc.a
+LOAD c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a
+LOAD c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a
+END GROUP
+
+.text           0x08000000     0x7328
+ *(.isr_vector)
+ .isr_vector    0x08000000      0x188 startup.o
+                0x08000000                g_pfnVectors
+ *(.text*)
+ .text          0x08000188     0x3ac8 main.o
+                0x08000250                PN532_Delay
+                0x08000270                PN532_WakeUp
+                0x0800029c                PN532_setPassiveActivationRetries
+                0x080002e8                PN532_readPassiveTargetID
+                0x08000340                PN532_readDetectedPassiveTargetID
+                0x080003b8                PN532_SAMConfig
+                0x08000410                PN532_getGeneralStatus
+                0x08000450                PN532_diagnoseCommunicationLineTest
+                0x08000534                PN532_getFirmwareVersion
+                0x080005f4                PN532_sendCommandCheckAck
+                0x08000644                PN532_writecommand
+                0x0800077c                PN532_write
+                0x08000804                PN532_readdata
+                0x080008e8                PN532_readack
+                0x080009f8                PN532_isready
+                0x08000b38                PN532_waitready
+                0x08000b86                PN532_setDataTarget
+                0x08000c08                PN532_getDataTarget
+                0x08000c80                PN532_AsTarget
+                0x08000ce8                PN532_mifareclassic_AuthenticateBlock
+                0x08000dd4                PN532_mifareclassic_ReadDataBlock
+                0x08000e4c                PN532_mifareclassic_WriteDataBlock
+                0x08000ebc                PN532_Read_Data
+                0x08000f60                LCD_PN532_CreateRunInfoString
+                0x08000fd4                LCD_BAR_CreateRunInfoString
+                0x08001020                UIDResponse
+                0x08001084                main
+                0x08001de4                ValueInterrupToStr
+                0x08001edc                SCAN_SendCMD
+                0x08001f2c                SCAN_SumToString
+                0x08001fb0                LCD_CtrlLinesConfig
+                0x08002044                I2C_SingleRandomWrite
+                0x08002104                LCD_SetCursor
+                0x080021a0                LCD_WriteData
+                0x08002264                LCD_WriteString
+                0x0800229e                LCD_RunStringDevInfo
+                0x080024cc                LCD_RunStringBARCode
+                0x080025f4                LCD_RunStringNFCCode
+                0x0800271c                LCD_Init
+                0x080027bc                LCD_DisplaySum
+                0x08002840                EXTI_Init
+                0x08002924                EXTI_GetFlagStatus
+                0x08002958                EXTI_ClearITPendingBit
+                0x08002974                BTN_Init
+                0x080029a4                BTN_IRQHandler
+                0x08002a3c                Usart2Init
+                0x08002ac0                Usart2_SendData
+                0x08002b10                SCAN_UsartInit
+                0x08002bc0                LED_Init
+                0x08002c00                TIM_Cmd
+                0x08002c3e                TIM_TimeBaseInit
+                0x08002d38                TIM_ITConfig
+                0x08002d7e                TIM_GetITStatus
+                0x08002dd0                TIM_ClearITPendingBit
+                0x08002df0                Timer1Init
+                0x08002e64                EnableTimer1Interrupt
+                0x08002e88                DisableTimer1Interrupt
+                0x08002eac                TIM1_IRQHandler
+                0x08003104                PN532_SPIInit
+                0x080031cc                Send2PC_FirmWareVesion
+                0x080033c0                PN532_FirmWareVersion2String
+                0x08003524                fourbytes2strhex
+                0x0800360c                PN532_WriteTagtoHex
+                0x080036ec                BytesHex2Str
+                0x080037b4                PN532_WriteCARD
+                0x08003af0                PN532_Write_Data
+ .text          0x08003c50       0xe0 startup.o
+                0x08003c50                Reset_Handler
+                0x08003cf0                Delay
+                0x08003d18                GetTickCount
+ .text          0x08003d30      0x10c fifo.o
+                0x08003d30                FIFO_GetNextData
+                0x08003d8c                USART_NUM_IRQHandler
+ .text          0x08003e3c      0x1fc ../Libraries/CMSIS/Source/system_stm32f10x.o
+                0x08003e3c                SystemInit
+                0x08003e48                SystemCoreClockUpdate
+ .text          0x08004038      0x18c ../Libraries/SPL/src/misc.o
+                0x08004038                NVIC_PriorityGroupConfig
+                0x0800405c                NVIC_Init
+                0x08004120                NVIC_SetVectorTable
+                0x0800414c                NVIC_SystemLPConfig
+                0x0800418c                SysTick_CLKSourceConfig
+ .text          0x080041c4      0x7dc ../Libraries/SPL/src/stm32f10x_rcc.o
+                0x080041c4                RCC_DeInit
+                0x08004220                RCC_HSEConfig
+                0x0800427c                RCC_WaitForHSEStartUp
+                0x080042cc                RCC_AdjustHSICalibrationValue
+                0x08004308                RCC_HSICmd
+                0x08004328                RCC_PLLConfig
+                0x08004364                RCC_PLLCmd
+                0x08004384                RCC_SYSCLKConfig
+                0x080043bc                RCC_GetSYSCLKSource
+                0x080043d8                RCC_HCLKConfig
+                0x08004410                RCC_PCLK1Config
+                0x08004448                RCC_PCLK2Config
+                0x08004480                RCC_ITConfig
+                0x080044cc                RCC_USBCLKConfig
+                0x080044e8                RCC_ADCCLKConfig
+                0x08004520                RCC_LSEConfig
+                0x08004560                RCC_LSICmd
+                0x08004580                RCC_RTCCLKConfig
+                0x080045a4                RCC_RTCCLKCmd
+                0x080045c4                RCC_GetClocksFreq
+                0x08004730                RCC_AHBPeriphClockCmd
+                0x0800476c                RCC_APB2PeriphClockCmd
+                0x080047a8                RCC_APB1PeriphClockCmd
+                0x080047e4                RCC_APB2PeriphResetCmd
+                0x08004820                RCC_APB1PeriphResetCmd
+                0x0800485c                RCC_BackupResetCmd
+                0x0800487c                RCC_ClockSecuritySystemCmd
+                0x0800489c                RCC_MCOConfig
+                0x080048bc                RCC_GetFlagStatus
+                0x08004930                RCC_ClearFlag
+                0x0800494c                RCC_GetITStatus
+                0x08004980                RCC_ClearITPendingBit
+ .text          0x080049a0      0x5d8 ../Libraries/SPL/src/stm32f10x_gpio.o
+                0x080049a0                GPIO_DeInit
+                0x08004a84                GPIO_AFIODeInit
+                0x08004a9c                GPIO_Init
+                0x08004c14                GPIO_StructInit
+                0x08004c3a                GPIO_ReadInputDataBit
+                0x08004c6c                GPIO_ReadInputData
+                0x08004c84                GPIO_ReadOutputDataBit
+                0x08004cb6                GPIO_ReadOutputData
+                0x08004cce                GPIO_SetBits
+                0x08004cea                GPIO_ResetBits
+                0x08004d06                GPIO_WriteBit
+                0x08004d34                GPIO_Write
+                0x08004d50                GPIO_PinLockConfig
+                0x08004d92                GPIO_EventOutputConfig
+                0x08004ddc                GPIO_EventOutputCmd
+                0x08004dfc                GPIO_PinRemapConfig
+                0x08004edc                GPIO_EXTILineConfig
+                0x08004f5c                GPIO_ETH_MediaInterfaceConfig
+ .text          0x08004f78      0x92c ../Libraries/SPL/src/stm32f10x_i2c.o
+                0x08004f78                I2C_DeInit
+                0x08004fc0                I2C_Init
+                0x08005144                I2C_StructInit
+                0x08005180                I2C_Cmd
+                0x080051be                I2C_DMACmd
+                0x080051fc                I2C_DMALastTransferCmd
+                0x0800523a                I2C_GenerateSTART
+                0x08005278                I2C_GenerateSTOP
+                0x080052b6                I2C_AcknowledgeConfig
+                0x080052f4                I2C_OwnAddress2Config
+                0x08005336                I2C_DualAddressCmd
+                0x08005374                I2C_GeneralCallCmd
+                0x080053b2                I2C_ITConfig
+                0x080053f8                I2C_SendData
+                0x08005416                I2C_ReceiveData
+                0x08005430                I2C_Send7bitAddress
+                0x0800546a                I2C_ReadRegister
+                0x08005496                I2C_SoftwareResetCmd
+                0x080054d8                I2C_NACKPositionConfig
+                0x08005518                I2C_SMBusAlertConfig
+                0x08005558                I2C_TransmitPEC
+                0x08005596                I2C_PECPositionConfig
+                0x080055d6                I2C_CalculatePEC
+                0x08005614                I2C_GetPEC
+                0x08005632                I2C_ARPCmd
+                0x08005670                I2C_StretchClockCmd
+                0x080056ae                I2C_FastModeDutyCycleConfig
+                0x080056ee                I2C_CheckEvent
+                0x0800574c                I2C_GetLastEvent
+                0x0800578e                I2C_GetFlagStatus
+                0x080057f2                I2C_ClearFlag
+                0x0800581e                I2C_GetITStatus
+                0x08005876                I2C_ClearITPendingBit
+ .text          0x080058a4      0x8dc ../Libraries/SPL/src/stm32f10x_usart.o
+                0x080058a4                USART_DeInit
+                0x0800595c                USART_Init
+                0x08005ad0                USART_StructInit
+                0x08005b08                USART_ClockInit
+                0x08005b5e                USART_ClockStructInit
+                0x08005b88                USART_Cmd
+                0x08005bc6                USART_ITConfig
+                0x08005c54                USART_DMACmd
+                0x08005c9a                USART_SetAddress
+                0x08005cd2                USART_WakeUpConfig
+                0x08005d08                USART_ReceiverWakeUpCmd
+                0x08005d46                USART_LINBreakDetectLengthConfig
+                0x08005d7c                USART_LINCmd
+                0x08005dba                USART_SendData
+                0x08005ddc                USART_ReceiveData
+                0x08005dfa                USART_SendBreak
+                0x08005e1c                USART_SetGuardTime
+                0x08005e56                USART_SetPrescaler
+                0x08005e8e                USART_SmartCardCmd
+                0x08005ecc                USART_SmartCardNACKCmd
+                0x08005f0a                USART_HalfDuplexCmd
+                0x08005f48                USART_OverSampling8Cmd
+                0x08005f8a                USART_OneBitMethodCmd
+                0x08005fc8                USART_IrDAConfig
+                0x08005ffe                USART_IrDACmd
+                0x0800603c                USART_GetFlagStatus
+                0x08006072                USART_ClearFlag
+                0x08006092                USART_GetITStatus
+                0x08006146                USART_ClearITPendingBit
+ .text          0x08006180      0x6d0 ../Libraries/SPL/src/stm32f10x_spi.o
+                0x08006180                SPI_I2S_DeInit
+                0x080061f4                SPI_Init
+                0x0800627a                I2S_Init
+                0x080063e0                SPI_StructInit
+                0x08006428                I2S_StructInit
+                0x0800645e                SPI_Cmd
+                0x0800649c                I2S_Cmd
+                0x080064da                SPI_I2S_ITConfig
+                0x0800653a                SPI_I2S_DMACmd
+                0x08006580                SPI_I2S_SendData
+                0x0800659c                SPI_I2S_ReceiveData
+                0x080065b4                SPI_NSSInternalSoftwareConfig
+                0x080065f6                SPI_SSOutputCmd
+                0x08006634                SPI_DataSizeConfig
+                0x0800666a                SPI_TransmitCRC
+                0x0800668c                SPI_CalculateCRC
+                0x080066ca                SPI_GetCRC
+                0x080066fa                SPI_GetCRCPolynomial
+                0x08006712                SPI_BiDirectionalLineConfig
+                0x08006752                SPI_I2S_GetFlagStatus
+                0x08006788                SPI_I2S_ClearFlag
+                0x080067a8                SPI_I2S_GetITStatus
+                0x0800681c                SPI_I2S_ClearITPendingBit
+ .text          0x08006850        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memcmp.o)
+ .text.memcmp   0x08006850       0x68 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memcmp.o)
+                0x08006850                memcmp
+ .text          0x080068b8       0xec c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memcpy.o)
+                0x080068b8                memcpy
+ .text          0x080069a4        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memmove.o)
+ .text.memmove  0x080069a4       0xf8 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memmove.o)
+                0x080069a4                memmove
+ .text          0x08006a9c        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memset.o)
+ .text.memset   0x08006a9c       0xa4 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memset.o)
+                0x08006a9c                memset
+ .text          0x08006b40        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strcat.o)
+ .text.strcat   0x08006b40       0x40 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strcat.o)
+                0x08006b40                strcat
+ .text          0x08006b80        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strcpy.o)
+ .text.strcpy   0x08006b80       0xbc c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strcpy.o)
+                0x08006b80                strcpy
+ .text          0x08006c3c        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strlcpy.o)
+ .text.strlcpy  0x08006c3c       0x54 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strlcpy.o)
+                0x08006c3c                strlcpy
+ .text          0x08006c90        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strlen-stub.o)
+ .text.strlen   0x08006c90       0x5c c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strlen-stub.o)
+                0x08006c90                strlen
+ .text          0x08006cec        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strpbrk.o)
+ .text.strpbrk  0x08006cec       0x38 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strpbrk.o)
+                0x08006cec                strpbrk
+ .text          0x08006d24        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strstr.o)
+ .text.two_way_long_needle
+                0x08006d24      0x2b8 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strstr.o)
+ .text.strstr   0x08006fdc      0x168 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strstr.o)
+                0x08006fdc                strstr
+ .text          0x08007144        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strtok.o)
+ .text.strtok   0x08007144       0x10 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strtok.o)
+                0x08007144                strtok
+ .text          0x08007154        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strtok_r.o)
+ .text.__strtok_r
+                0x08007154       0x68 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strtok_r.o)
+                0x08007154                __strtok_r
+ .text.strtok_r
+                0x080071bc        0x8 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strtok_r.o)
+                0x080071bc                strtok_r
+ .text          0x080071c4        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-impure.o)
+ .text          0x080071c4        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strchr.o)
+ .text.strchr   0x080071c4       0xcc c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strchr.o)
+                0x080071c4                strchr
+ .text          0x08007290        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strnlen.o)
+ .text.strnlen  0x08007290       0x24 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strnlen.o)
+                0x08007290                strnlen
+ *(.rodata*)
+ .rodata        0x080072b4       0x70 main.o
+ .rodata._global_impure_ptr
+                0x08007324        0x4 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-impure.o)
+                0x08007324                _global_impure_ptr
+ *(.eh_frame)
+                0x08007328                _etext = .
+
+.glue_7         0x08007328        0x0
+ .glue_7        0x08007328        0x0 linker stubs
+
+.glue_7t        0x08007328        0x0
+ .glue_7t       0x08007328        0x0 linker stubs
+
+.vfp11_veneer   0x08007328        0x0
+ .vfp11_veneer  0x08007328        0x0 linker stubs
+
+.v4_bx          0x08007328        0x0
+ .v4_bx         0x08007328        0x0 linker stubs
+
+.iplt           0x08007328        0x0
+ .iplt          0x08007328        0x0 main.o
+
+.rel.dyn        0x08007328        0x0
+ .rel.iplt      0x08007328        0x0 main.o
+
+.ARM            0x08007328        0x0
+                0x08007328                __exidx_start = .
+ *(.ARM.exidx*)
+                0x08007328                __exidx_end = .
+                0x08007328                _sidata = .
+
+.data           0x20000000      0x8e0 load address 0x08007328
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                _sdata = .
+ *(.data)
+ .data          0x20000000      0x48c main.o
+                0x20000000                _irq
+                0x20000001                _reset
+                0x20000010                cmd_Version
+                0x2000001c                cmd_TriggerScann
+                0x20000028                uidhex2pc4b
+                0x2000003c                uidnfcwrdara
+                0x200003a0                DataHex2pc
+ .data          0x2000048c        0x0 startup.o
+ .data          0x2000048c        0x0 fifo.o
+ .data          0x2000048c       0x14 ../Libraries/CMSIS/Source/system_stm32f10x.o
+                0x2000048c                SystemCoreClock
+                0x20000490                AHBPrescTable
+ .data          0x200004a0        0x0 ../Libraries/SPL/src/misc.o
+ .data          0x200004a0       0x14 ../Libraries/SPL/src/stm32f10x_rcc.o
+ .data          0x200004b4        0x0 ../Libraries/SPL/src/stm32f10x_gpio.o
+ .data          0x200004b4        0x0 ../Libraries/SPL/src/stm32f10x_i2c.o
+ .data          0x200004b4        0x0 ../Libraries/SPL/src/stm32f10x_usart.o
+ .data          0x200004b4        0x0 ../Libraries/SPL/src/stm32f10x_spi.o
+ .data          0x200004b4        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memcmp.o)
+ .data          0x200004b4        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memcpy.o)
+ .data          0x200004b4        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memmove.o)
+ .data          0x200004b4        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memset.o)
+ .data          0x200004b4        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strcat.o)
+ .data          0x200004b4        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strcpy.o)
+ .data          0x200004b4        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strlcpy.o)
+ .data          0x200004b4        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strlen-stub.o)
+ .data          0x200004b4        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strpbrk.o)
+ .data          0x200004b4        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strstr.o)
+ .data          0x200004b4        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strtok.o)
+ .data          0x200004b4        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strtok_r.o)
+ .data          0x200004b4        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-impure.o)
+ .data          0x200004b4        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strchr.o)
+ .data          0x200004b4        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strnlen.o)
+ *(.data*)
+ .data._impure_ptr
+                0x200004b4        0x4 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-impure.o)
+                0x200004b4                _impure_ptr
+ .data.impure_data
+                0x200004b8      0x428 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-impure.o)
+                0x200008e0                . = ALIGN (0x4)
+                0x200008e0                _edata = .
+
+.igot.plt       0x200008e0        0x0 load address 0x08007c08
+ .igot.plt      0x200008e0        0x0 main.o
+
+.bss            0x200008e0      0x7c8 load address 0x08007c08
+                0x200008e0                _sbss = .
+ *(.bss*)
+ .bss           0x200008e0      0x578 main.o
+                0x200008e0                replybuff
+                0x200008f4                rl
+                0x200008f8                pn532_packetbuffer
+                0x20000938                pn532_readbuffer
+                0x20000978                _uid
+                0x2000097f                _uidLen
+                0x20000980                _key
+                0x20000986                _inListedTag
+                0x20000988                TimingDelay
+                0x2000098c                RCC_Clocks
+                0x200009a0                buttonState
+                0x200009a4                g_sBuffer
+                0x20000a28                g_iBufferLength
+                0x20000a74                pn532_cmd
+                0x20000ab4                pn532_cmdlen
+                0x20000ab5                btnpress
+                0x20000ab8                pn532_rddata
+                0x20000af8                pn532_rdlen
+                0x20000af9                b_getversion
+                0x20000afa                cntbyteversion
+                0x20000afc                ScanerVersion
+                0x20000b43                b_firstrddata
+                0x20000b44                nfc_command
+                0x20000b45                nfc_cntcomand
+                0x20000b46                b_wakeup
+                0x20000b47                b_samconfig
+                0x20000b48                b_rertyes
+                0x20000b49                b_discannfc
+                0x20000b4a                success
+                0x20000b4b                b_hextostr
+                0x20000b4c                uid
+                0x20000b53                u8_cntchar
+                0x20000b54                u8_cntindex
+                0x20000b58                outwrdata
+                0x20000b5c                uidLength
+                0x20000b60                decuid
+                0x20000b64                cntlooppn532
+                0x20000b68                cntbutpress
+                0x20000b69                b_1secflg
+                0x20000b6a                cnttimer30sec
+                0x20000b6c                cnttimer1sec
+                0x20000b6e                cnttimer1
+                0x20000b70                previousState
+                0x20000b71                u8_btnstate
+                0x20000b72                timer1data
+                0x20000b74                testtimer1
+                0x20000b76                timer1flag
+                0x20000b77                u8_wrnfcstatus
+                0x20000b78                b_wrstr1
+                0x20000b79                pn532_rd_stat
+                0x20000b7a                pn532_wr_stat
+                0x20000b7c                NVIC_InitTmr1Structure
+                0x20000b80                EXTI_InitExtiStruct
+                0x20000b88                NVIC_InitExtiStruct
+                0x20000b8c                pn_chip
+                0x20000b8d                pn_fw1chip
+                0x20000b8e                pn_fw2chip
+                0x20000b8f                pn_suppchip
+                0x20000b90                s_pn_info
+                0x20000c10                s_bar_info
+                0x20000c90                s_bar_ver_info
+                0x20000cbc                s_bar_site_info
+                0x20000ce6                statusDevice
+                0x20000ce8                rdDataBlock
+ .bss           0x20000e58      0x208 startup.o
+                0x2000105c                tick
+ .bss           0x20001060       0x48 fifo.o
+                0x20001060                g_aInputQueue
+ .bss           0x200010a8        0x0 ../Libraries/CMSIS/Source/system_stm32f10x.o
+ .bss           0x200010a8        0x0 ../Libraries/SPL/src/misc.o
+ .bss           0x200010a8        0x0 ../Libraries/SPL/src/stm32f10x_rcc.o
+ .bss           0x200010a8        0x0 ../Libraries/SPL/src/stm32f10x_gpio.o
+ .bss           0x200010a8        0x0 ../Libraries/SPL/src/stm32f10x_i2c.o
+ .bss           0x200010a8        0x0 ../Libraries/SPL/src/stm32f10x_usart.o
+ .bss           0x200010a8        0x0 ../Libraries/SPL/src/stm32f10x_spi.o
+ .bss           0x200010a8        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memcmp.o)
+ .bss           0x200010a8        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memcpy.o)
+ .bss           0x200010a8        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memmove.o)
+ .bss           0x200010a8        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memset.o)
+ .bss           0x200010a8        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strcat.o)
+ .bss           0x200010a8        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strcpy.o)
+ .bss           0x200010a8        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strlcpy.o)
+ .bss           0x200010a8        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strlen-stub.o)
+ .bss           0x200010a8        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strpbrk.o)
+ .bss           0x200010a8        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strstr.o)
+ .bss           0x200010a8        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strtok.o)
+ .bss           0x200010a8        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strtok_r.o)
+ .bss           0x200010a8        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-impure.o)
+ .bss           0x200010a8        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strchr.o)
+ .bss           0x200010a8        0x0 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strnlen.o)
+ *(COMMON)
+                0x200010a8                _ebss = .
+OUTPUT(BARCODE_YK_E1005_SC0802.elf elf32-littlearm)
+LOAD linker stubs
+
+.debug_info     0x00000000     0x6def
+ .debug_info    0x00000000     0x31ab main.o
+ .debug_info    0x000031ab      0x1f6 startup.o
+ .debug_info    0x000033a1      0x2ea fifo.o
+ .debug_info    0x0000368b      0x2fc ../Libraries/CMSIS/Source/system_stm32f10x.o
+ .debug_info    0x00003987      0x50c ../Libraries/SPL/src/misc.o
+ .debug_info    0x00003e93      0x8f3 ../Libraries/SPL/src/stm32f10x_rcc.o
+ .debug_info    0x00004786      0x72e ../Libraries/SPL/src/stm32f10x_gpio.o
+ .debug_info    0x00004eb4      0xb86 ../Libraries/SPL/src/stm32f10x_i2c.o
+ .debug_info    0x00005a3a      0xa5b ../Libraries/SPL/src/stm32f10x_usart.o
+ .debug_info    0x00006495      0x95a ../Libraries/SPL/src/stm32f10x_spi.o
+
+.debug_abbrev   0x00000000     0x1215
+ .debug_abbrev  0x00000000      0x406 main.o
+ .debug_abbrev  0x00000406      0x11b startup.o
+ .debug_abbrev  0x00000521      0x156 fifo.o
+ .debug_abbrev  0x00000677      0x18e ../Libraries/CMSIS/Source/system_stm32f10x.o
+ .debug_abbrev  0x00000805      0x181 ../Libraries/SPL/src/misc.o
+ .debug_abbrev  0x00000986      0x1d3 ../Libraries/SPL/src/stm32f10x_rcc.o
+ .debug_abbrev  0x00000b59      0x1e9 ../Libraries/SPL/src/stm32f10x_gpio.o
+ .debug_abbrev  0x00000d42      0x193 ../Libraries/SPL/src/stm32f10x_i2c.o
+ .debug_abbrev  0x00000ed5      0x191 ../Libraries/SPL/src/stm32f10x_usart.o
+ .debug_abbrev  0x00001066      0x1af ../Libraries/SPL/src/stm32f10x_spi.o
+
+.debug_aranges  0x00000000      0x140
+ .debug_aranges
+                0x00000000       0x20 main.o
+ .debug_aranges
+                0x00000020       0x20 startup.o
+ .debug_aranges
+                0x00000040       0x20 fifo.o
+ .debug_aranges
+                0x00000060       0x20 ../Libraries/CMSIS/Source/system_stm32f10x.o
+ .debug_aranges
+                0x00000080       0x20 ../Libraries/SPL/src/misc.o
+ .debug_aranges
+                0x000000a0       0x20 ../Libraries/SPL/src/stm32f10x_rcc.o
+ .debug_aranges
+                0x000000c0       0x20 ../Libraries/SPL/src/stm32f10x_gpio.o
+ .debug_aranges
+                0x000000e0       0x20 ../Libraries/SPL/src/stm32f10x_i2c.o
+ .debug_aranges
+                0x00000100       0x20 ../Libraries/SPL/src/stm32f10x_usart.o
+ .debug_aranges
+                0x00000120       0x20 ../Libraries/SPL/src/stm32f10x_spi.o
+
+.debug_line     0x00000000     0x3e4b
+ .debug_line    0x00000000     0x1d3f main.o
+ .debug_line    0x00001d3f      0x1b2 startup.o
+ .debug_line    0x00001ef1      0x1b1 fifo.o
+ .debug_line    0x000020a2      0x2ed ../Libraries/CMSIS/Source/system_stm32f10x.o
+ .debug_line    0x0000238f      0x289 ../Libraries/SPL/src/misc.o
+ .debug_line    0x00002618      0x540 ../Libraries/SPL/src/stm32f10x_rcc.o
+ .debug_line    0x00002b58      0x473 ../Libraries/SPL/src/stm32f10x_gpio.o
+ .debug_line    0x00002fcb      0x501 ../Libraries/SPL/src/stm32f10x_i2c.o
+ .debug_line    0x000034cc      0x50a ../Libraries/SPL/src/stm32f10x_usart.o
+ .debug_line    0x000039d6      0x475 ../Libraries/SPL/src/stm32f10x_spi.o
+
+.debug_str      0x00000000     0x2b2c
+ .debug_str     0x00000000     0x19e8 main.o
+                               0x1ade (size before relaxing)
+ .debug_str     0x000019e8       0xab startup.o
+                                0x1fa (size before relaxing)
+ .debug_str     0x00001a93       0x5f fifo.o
+                                0x278 (size before relaxing)
+ .debug_str     0x00001af2       0xc9 ../Libraries/CMSIS/Source/system_stm32f10x.o
+                                0x27f (size before relaxing)
+ .debug_str     0x00001bbb       0xdf ../Libraries/SPL/src/misc.o
+                                0x3a0 (size before relaxing)
+ .debug_str     0x00001c9a      0x344 ../Libraries/SPL/src/stm32f10x_rcc.o
+                                0x602 (size before relaxing)
+ .debug_str     0x00001fde      0x221 ../Libraries/SPL/src/stm32f10x_gpio.o
+                                0x501 (size before relaxing)
+ .debug_str     0x000021ff      0x315 ../Libraries/SPL/src/stm32f10x_i2c.o
+                                0x64e (size before relaxing)
+ .debug_str     0x00002514      0x37c ../Libraries/SPL/src/stm32f10x_usart.o
+                                0x678 (size before relaxing)
+ .debug_str     0x00002890      0x29c ../Libraries/SPL/src/stm32f10x_spi.o
+                                0x5e5 (size before relaxing)
+
+.comment        0x00000000       0x49
+ .comment       0x00000000       0x49 main.o
+                                 0x4a (size before relaxing)
+ .comment       0x00000049       0x4a startup.o
+ .comment       0x00000049       0x4a fifo.o
+ .comment       0x00000049       0x4a ../Libraries/CMSIS/Source/system_stm32f10x.o
+ .comment       0x00000049       0x4a ../Libraries/SPL/src/misc.o
+ .comment       0x00000049       0x4a ../Libraries/SPL/src/stm32f10x_rcc.o
+ .comment       0x00000049       0x4a ../Libraries/SPL/src/stm32f10x_gpio.o
+ .comment       0x00000049       0x4a ../Libraries/SPL/src/stm32f10x_i2c.o
+ .comment       0x00000049       0x4a ../Libraries/SPL/src/stm32f10x_usart.o
+ .comment       0x00000049       0x4a ../Libraries/SPL/src/stm32f10x_spi.o
+
+.ARM.attributes
+                0x00000000       0x2b
+ .ARM.attributes
+                0x00000000       0x2d main.o
+ .ARM.attributes
+                0x0000002d       0x2d startup.o
+ .ARM.attributes
+                0x0000005a       0x2d fifo.o
+ .ARM.attributes
+                0x00000087       0x2d ../Libraries/CMSIS/Source/system_stm32f10x.o
+ .ARM.attributes
+                0x000000b4       0x2d ../Libraries/SPL/src/misc.o
+ .ARM.attributes
+                0x000000e1       0x2d ../Libraries/SPL/src/stm32f10x_rcc.o
+ .ARM.attributes
+                0x0000010e       0x2d ../Libraries/SPL/src/stm32f10x_gpio.o
+ .ARM.attributes
+                0x0000013b       0x2d ../Libraries/SPL/src/stm32f10x_i2c.o
+ .ARM.attributes
+                0x00000168       0x2d ../Libraries/SPL/src/stm32f10x_usart.o
+ .ARM.attributes
+                0x00000195       0x2d ../Libraries/SPL/src/stm32f10x_spi.o
+ .ARM.attributes
+                0x000001c2       0x2d c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memcmp.o)
+ .ARM.attributes
+                0x000001ef       0x1b c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memcpy.o)
+ .ARM.attributes
+                0x0000020a       0x2d c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memmove.o)
+ .ARM.attributes
+                0x00000237       0x2d c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memset.o)
+ .ARM.attributes
+                0x00000264       0x2d c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strcat.o)
+ .ARM.attributes
+                0x00000291       0x2d c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strcpy.o)
+ .ARM.attributes
+                0x000002be       0x2d c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strlcpy.o)
+ .ARM.attributes
+                0x000002eb       0x2d c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strlen-stub.o)
+ .ARM.attributes
+                0x00000318       0x2d c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strpbrk.o)
+ .ARM.attributes
+                0x00000345       0x2d c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strstr.o)
+ .ARM.attributes
+                0x00000372       0x2d c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strtok.o)
+ .ARM.attributes
+                0x0000039f       0x2d c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strtok_r.o)
+ .ARM.attributes
+                0x000003cc       0x2d c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-impure.o)
+ .ARM.attributes
+                0x000003f9       0x2d c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strchr.o)
+ .ARM.attributes
+                0x00000426       0x2d c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strnlen.o)
+
+.debug_frame    0x00000000     0x245c
+ .debug_frame   0x00000000      0x9ec main.o
+ .debug_frame   0x000009ec       0xc8 startup.o
+ .debug_frame   0x00000ab4       0x54 fifo.o
+ .debug_frame   0x00000b08       0x98 ../Libraries/CMSIS/Source/system_stm32f10x.o
+ .debug_frame   0x00000ba0       0xd8 ../Libraries/SPL/src/misc.o
+ .debug_frame   0x00000c78      0x4f4 ../Libraries/SPL/src/stm32f10x_rcc.o
+ .debug_frame   0x0000116c      0x2d0 ../Libraries/SPL/src/stm32f10x_gpio.o
+ .debug_frame   0x0000143c      0x530 ../Libraries/SPL/src/stm32f10x_i2c.o
+ .debug_frame   0x0000196c      0x490 ../Libraries/SPL/src/stm32f10x_usart.o
+ .debug_frame   0x00001dfc      0x3a0 ../Libraries/SPL/src/stm32f10x_spi.o
+ .debug_frame   0x0000219c       0x28 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memcmp.o)
+ .debug_frame   0x000021c4       0x40 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memmove.o)
+ .debug_frame   0x00002204       0x2c c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memset.o)
+ .debug_frame   0x00002230       0x28 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strcat.o)
+ .debug_frame   0x00002258       0x20 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strcpy.o)
+ .debug_frame   0x00002278       0x38 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strlcpy.o)
+ .debug_frame   0x000022b0       0x20 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strlen-stub.o)
+ .debug_frame   0x000022d0       0x2c c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strpbrk.o)
+ .debug_frame   0x000022fc       0x9c c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strstr.o)
+ .debug_frame   0x00002398       0x20 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strtok.o)
+ .debug_frame   0x000023b8       0x50 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strtok_r.o)
+ .debug_frame   0x00002408       0x34 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strchr.o)
+ .debug_frame   0x0000243c       0x20 c:/program files/gnu tools arm embedded/gcc-arm-none-eabi-10.3-2021.07/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strnlen.o)
