@@ -24,6 +24,7 @@
 #define __STM32F4xx_CONF_H
 
 #include <stdint.h>
+#include "stm32f10x_flash.h"
 #include "stm32f10x_tim.h"
 #include "stm32f10x_adc.h"
 #include "stm32f10x_exti.h"
@@ -33,10 +34,13 @@
 #include "stm32f10x_usart.h"
 #include "stm32f10x_spi.h"
 #include "stm32f10x_i2c.h"
+//#include "stm32f10x_flash.c"
 #include "misc.h"
 
 #define QUEUE_LEN		64
 #define BUFFER_LEN		128
+
+#define DATE_LEN 64
 
 #define USB_STATE_LEN	26
 //------------------------------------------------------------------------------

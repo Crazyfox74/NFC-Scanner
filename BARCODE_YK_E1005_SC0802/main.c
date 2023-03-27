@@ -1,19 +1,37 @@
 /* PB0									Button
  * PB6, PB7								I2C LCD
- * PA9, PA10							UART BarCodeScan
+ * PA9, PA10							USART1 BarCodeScan
  * PB12, PB13, PB14, PB15 SPI NFC
  * PB11-reset, PA8-IRQ	SPI NFC
+ *
+ *PA11-USBDM PA12-USBDP					USB CDC
+ *
 */
+#include <errno.h>
 
+
+#include "stdio.h"
 #include "stm32f10x.h"
 #include "stm32f10x_conf.h"
 #include "nfcpn532.h"
 #include "nfcpn532.c"
+#include "stm32f10x_flash.h"
+#include "stm32f10x_flash.c"
 
 
 //#include "fifo.c"
 
 #include <string.h>
+
+
+
+#include "hw_config.h"
+#include "RTC/rtc_time.c"
+
+#include "RTC/RTC.h"
+#include "RTC/RTC.c"
+//#include "RTC/unix_time.h"
+
 
 //******************************************************************************
 
@@ -96,6 +114,29 @@
 #define BTN_PRESSED 1
 #define BTN_UNPRESSED 2
 
+
+
+/********/
+
+#define PA7_RCC_PERIPH_CLOCK_CMD		RCC_APB2PeriphClockCmd
+#define PA7_RCC_GPIO_PORT				RCC_APB2Periph_GPIOA
+#define PA7_GPIO_PORT					GPIOA
+#define PA7_PIN							GPIO_Pin_7
+
+
+
+ /**************/
+
+#define FIRMWARE_PAGE_OFFSET 	0xC800
+
+#define flash_addr1 0x0800C800
+
+//A77c
+
+// адрес начала С800
+
+//0800 |
+
 typedef enum {
 	UNPRESSED = 0,
 	PRESSED,
@@ -146,6 +187,16 @@ bool b_getversion=DISABLE;
  uint8_t ScanerVersion [71]  = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
 bool b_firstrddata=DISABLE;
 
+//****bluetooth uart
+char date_sBuffer [ BUFFER_LEN + 1];
+int date_iBufferLength = 0;
+
+
+//******
+
+//USBLIB_WByte _LineState;
+
+
 void SCAN_SumToString ( int sum, char * sumStr );
 void SCAN_SendCMD (char* strcmd,int sz_cmd);
 uint8_t I2C_SingleRandomWrite ( I2C_TypeDef* I2Cx, uint8_t Device, uint8_t Data );
@@ -170,6 +221,8 @@ void BTN_Init(void);
 void LED_Init(void);
 
 void Usart2Init(void);
+
+
 
 void Timer1Init(void);
 void EnableTimer1Interrupt();
@@ -199,7 +252,17 @@ uint8_t PN532_Write_Data(uint8_t *uid_card, uint8_t uid_card_len, uint8_t blockN
 
 bool BytesHex2Str(uint8_t *indatarray, uint8_t size_array, uint8_t *outstrhex);
 
+void SD_SPI_GPIO_Init(void);
 
+void SD_SPI_AF_Init(void);
+
+void PA7_Init(void);
+
+void FLASH_Init(void);
+uint32_t FLASH_Read(uint32_t address);
+void FLASH_Write(uint32_t Value);
+
+ErrorStatus Date_GetNextDate(char *dResult );
 
 //******************************************************************************
 
@@ -324,6 +387,9 @@ static char b_bounce_value[]="00000";
 
 uint8_t rdDataBlock[16];
 
+static char s_cal_data[21]="00.00.0000-00:00:00\r\n";
+static char s_scan_d_c[42]="";
+
 static char s_pc_PN532_info1[]="NFC read operation correct";
 static char s_pc_PN532_info2[]="NFC write operation correct";
 static char s_pc_PN532_err1[]="Authentication failed for sector";
@@ -333,6 +399,24 @@ static char s_pc_PN532_err4[]="Unable to read data block";
 
 uint8_t DataHex2pc[47] = { '0', '0',' ', '0', '0',' ', '0','0',' ', '0', '0',' ', '0', '0',' ','0', '0',' ', '0', '0',' ', '0','0',' ', '0', '0',' ', '0', '0',' ', '0', '0',' ', '0', '0',' ', '0','0',' ', '0', '0',' ', '0', '0',' ','0', '0' };
 static char s_pn_data_block0[]    = "Data from block 1: ";
+
+
+
+static char sd_error_con[]="Can't connect to SD\r\n";
+static char sd_error_wr[]="Can't write to SD\r\n";
+static char sd_error_rd[]="Can't read from SD\r\n";
+
+uint32_t flash_test;
+
+
+uint32_t timer = 138450400+14400;
+uint32_t tim;
+static char s_cal_sec[2]="00";
+static char s_cal_min[2]="00";
+static char s_cal_hour[2]="00";
+
+
+
 //***********************************************************
 //Сборка сборка бегущей строки с версией ПО NFC модуля для LCD
 void LCD_PN532_CreateRunInfoString(){
@@ -402,6 +486,99 @@ uint32_t UIDResponse(uint8_t *uid,  uint8_t uidLength){
 return result;
 
 }
+//**********************************************************************
+void PA7_Init(void){
+	GPIO_InitTypeDef		GPIO_InitStruct;
+	PA7_RCC_PERIPH_CLOCK_CMD ( PA7_RCC_GPIO_PORT, ENABLE );
+
+	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
+	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_Out_PP;
+	GPIO_InitStruct.GPIO_Pin = PA7_PIN;
+	GPIO_Init ( PA7_GPIO_PORT, &GPIO_InitStruct );
+//#define LED_GPIO_PORT					GPIOA
+//#define LED_PIN							GPIO_Pin_12
+
+
+	GPIO_WriteBit(PA7_GPIO_PORT, PA7_PIN, 0);
+}
+
+
+//********************
+
+void SD_SPI_GPIO_Init(void)
+{
+    /*Configure SPI GPIO************************************************************************/
+    /*You should configure MISO, MOSI and SCK pins here!*/
+    RCC->APB2ENR     |=  RCC_APB2ENR_IOPAEN;
+    GPIOA->CRL &= ~(GPIO_CRL_CNF5 | GPIO_CRL_CNF6 | GPIO_CRL_CNF7);
+   // GPIOA->CRL |= (GPIO_CRL_CNF5_1 | GPIO_CRL_CNF6_1 | GPIO_CRL_CNF7_1);
+ //   GPIOA->CRL |= (GPIO_CRL_CNF5_1 | GPIO_CRL_CNF6_1 | GPIO_CRL_CNF7_1);
+    GPIOA->CRL &= ~(GPIO_CRL_MODE5 | GPIO_CRL_MODE6 | GPIO_CRL_MODE7);
+  //  GPIOA->CRL |= (GPIO_CRL_MODE5 | GPIO_CRL_MODE7);
+
+    GPIOA->CRL |= (GPIO_CRL_CNF5_1 | GPIO_CRL_MODE5);	//sck
+    GPIOA->CRL |= (GPIO_CRL_CNF6_0);	//miso
+    GPIOA->CRL |= (GPIO_CRL_CNF7_1 | GPIO_CRL_MODE7);	//mosi
+
+    /*
+    GPIOC->MODER    &=  ~(GPIO_MODER_MODER10 | GPIO_MODER_MODER11 | GPIO_MODER_MODER12);
+    GPIOC->MODER    |=  (GPIO_MODER_MODER10_1 | GPIO_MODER_MODER11_1 | GPIO_MODER_MODER12_1);
+    GPIOC->OTYPER   &=  ~(GPIO_OTYPER_OT_10 | GPIO_OTYPER_OT_11 | GPIO_OTYPER_OT_12);
+    GPIOC->OSPEEDR  |=  (GPIO_OSPEEDER_OSPEEDR10 | GPIO_OSPEEDER_OSPEEDR11 | GPIO_OSPEEDER_OSPEEDR12);
+    GPIOC->PUPDR    &=  ~(GPIO_PUPDR_PUPDR10 | GPIO_PUPDR_PUPDR11 | GPIO_PUPDR_PUPDR12);
+    GPIOC->PUPDR    |=  (GPIO_PUPDR_PUPDR10_0 | GPIO_PUPDR_PUPDR11_0 | GPIO_PUPDR_PUPDR12_0);
+*/
+
+    /*********************************************************************************************/
+}
+
+
+void SD_SPI_AF_Init(void){
+
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB | RCC_APB2Periph_AFIO, ENABLE);
+
+	GPIO_PinRemapConfig(GPIO_Remap_SPI1, ENABLE);
+
+	GPIOB->CRL &= ~(GPIO_CRL_CNF3 | GPIO_CRL_CNF4 | GPIO_CRL_CNF5);
+	GPIOB->CRL &= ~(GPIO_CRL_MODE3 | GPIO_CRL_MODE4 | GPIO_CRL_MODE5);
+
+	GPIOB->CRL |= (GPIO_CRL_CNF3_1 | GPIO_CRL_MODE3);
+	GPIOB->CRL |= (GPIO_CRL_CNF4_0);
+	GPIOB->CRL |= (GPIO_CRL_CNF5_1 | GPIO_CRL_MODE5);
+
+
+
+}
+
+//**************************FLASH********************
+void FLASH_Init(void)
+{
+	FLASH_HalfCycleAccessCmd(FLASH_HalfCycleAccess_Disable);
+	FLASH_PrefetchBufferCmd(FLASH_PrefetchBuffer_Enable);
+	FLASH_SetLatency(FLASH_Latency_1);
+
+}
+uint32_t FLASH_Read(uint32_t address)
+{
+	return (*(__IO uint32_t*) address);
+}
+
+void FLASH_Write(uint32_t Value)
+{
+	uint16_t i;
+	uint32_t pageAdr;
+
+	pageAdr = NVIC_VectTab_FLASH | FIRMWARE_PAGE_OFFSET;                    // Адрес страницы памяти
+
+	FLASH_Unlock();
+	FLASH_ErasePage(pageAdr);
+
+	FLASH_ProgramWord((uint32_t)(pageAdr), (uint32_t)Value);
+	FLASH_Lock();
+
+
+}
+
 
 
 //******************************************************************************
@@ -409,6 +586,9 @@ return result;
 int main(void)
 {
 	g_sSum[SUM_STR_LEN + 1] = '\0';
+
+	rtc_cal rtc_time;
+	RTC_INIT();
 
 	RCC_PLLCmd(DISABLE);
 	RCC_HSEConfig(RCC_HSE_ON);
@@ -421,6 +601,9 @@ int main(void)
 	RCC->CFGR=tmpreg & 0xFFFFF0FF;
 	//RCC->CFGR=tmpreg|0x00000400;//HCLK / 2 - значение по умолчанию? (36МГц)
 	RCC->CFGR=tmpreg|0x00000500;//HCLK / 4
+
+	RCC->CFGR|=RCC_CFGR_USBPRE;	//предделитель для usb
+
 	//RCC->CFGR=tmpreg | 0x00000600;//HCLK / 8
 
     RCC_PLLCmd(ENABLE);
@@ -430,6 +613,16 @@ int main(void)
 	SysTick_Config ( RCC_Clocks.HCLK_Frequency / 1000 );
 
 	btnpress=0;
+
+
+
+	//RTC
+
+	RTC_SET_COUNTER(timer);
+
+
+
+//	FLASH_Init();
 
 	LCD_Init();
 	BTN_Init();
@@ -601,6 +794,13 @@ switch(statusDevice){
 	break;
 }
 
+/*
+	FLASH_Write(0xFFFFFFFF);
+	flash_test = FLASH_Read(flash_addr1);
+	Usart2_SendData((char*)flash_test,sizeof(flash_test));
+	Usart2_SendData(s_pn_newline,sizeof(s_pn_newline));
+
+
 
 /*
 Usart2_SendData(s_lcd_scanner,strlen(s_lcd_scanner));
@@ -619,6 +819,13 @@ EnableTimer1Interrupt();
 	while (1) {
 		char cSymbol;
 
+		char date_Symbol;
+
+
+
+
+
+	//	GPIO_WriteBit(PA7_GPIO_PORT, PA7_PIN, 0);
 
 		if(timer1flag==1){
 			ValueInterrupToStr();
@@ -627,7 +834,7 @@ EnableTimer1Interrupt();
 			timer1flag=0;
 		}
 
-
+	//	GPIO_WriteBit(PA7_GPIO_PORT, PA7_PIN, 1);
 
 /*****************************************************************************/
 		/*
@@ -646,6 +853,24 @@ if(u8_wrnfcstatus==0){
 				g_iBufferLength--;
 			}
 		}
+/*	прием данных с телефона
+		while (Date_GetNextDate(&date_Symbol) == SUCCESS){
+			date_sBuffer [ date_iBufferLength++ ] = date_Symbol;
+			date_sBuffer [ date_iBufferLength] = '\0';
+			if( date_iBufferLength >= BUFFER_LEN){
+				memmove(date_sBuffer, date_sBuffer + 1, BUFFER_LEN);
+				date_iBufferLength--;
+			}
+
+		}
+*/
+/*	декодирование данных с телефона
+		if(strstr(date_sBuffer, "\r\n" != NULL)){
+			strtok(date_sBuffer, "\r\n");
+			char *dBuffer = date_sBuffer;
+
+		}
+*/
 
 		//GPIO_WriteBit(LED_GPIO_PORT, LED_PIN, 0);
 
@@ -667,11 +892,12 @@ if(u8_wrnfcstatus==0){
 			  strlcpy ( g_sBarCode, (const char *)s_lcd_barcode_read, USB_STATE_LEN );
 			  strcat(g_sBarCode,pBuffer );
 			//strlcpy ( g_sBarCode, (const char *)pBuffer, USB_STATE_LEN );
-
+/*
 			Usart2_SendData(s_pc_barcode,strlen(s_pc_barcode));
-			Usart2_SendData(g_sBarCode,13);
 			Usart2_SendData(s_newline,strlen(s_newline));
-
+			Usart2_SendData(g_sBarCode,strlen(g_sBarCode));
+			Usart2_SendData(s_newline,strlen(s_newline));
+*/
 			//LCD_SetCursor ( LCD_CURSOR_1STR );
 			//LCD_WriteString ( s_lcd_barcode );
 
@@ -691,7 +917,52 @@ if(u8_wrnfcstatus==0){
 			memmove ( g_sBuffer, g_sBuffer + strLength,
 
 					BUFFER_LEN + 1 - strLength );
+
+			timer = RTC_GET_COUNTER();
+			timer_to_cal(timer, &rtc_time);
+			tim = cal_to_timer(&rtc_time);
+
+
+/*
+			s_cal_sec[0] = 0x30 + (unix_time.sec/10);
+			s_cal_sec[1] = 0x30 + (unix_time.sec%10);
+			s_cal_min[0] = 0x30 + (unix_time.min/10);
+			s_cal_min[1] = 0x30 + (unix_time.min%10);
+			s_cal_hour[0] = 0x30 + (unix_time.hour/10);
+			s_cal_hour[1] = 0x30 + (unix_time.hour%10);
+*/
+
+			s_cal_data[0] = 0x30 + (rtc_time.mday/10);
+			s_cal_data[1] = 0x30 + (rtc_time.mday%10);
+			s_cal_data[3] = 0x30 + (rtc_time.mon/10);
+			s_cal_data[4] = 0x30 + (rtc_time.mon%10);
+			s_cal_data[6] = 0x30 + (rtc_time.year/1000%10);
+			s_cal_data[7] = 0x30 + (rtc_time.year/100%10);
+			s_cal_data[8] = 0x30 + (rtc_time.year/10%10);
+			s_cal_data[9] = 0x30 + (rtc_time.year%10);
+			s_cal_data[11] = 0x30 + (rtc_time.hour/10);
+			s_cal_data[12] = 0x30 + (rtc_time.hour%10);
+			s_cal_data[14] = 0x30 + (rtc_time.min/10);
+			s_cal_data[15] = 0x30 + (rtc_time.min%10);
+			s_cal_data[17] = 0x30 + (rtc_time.sec/10);
+			s_cal_data[18] = 0x30 + (rtc_time.sec%10);
+
+
+			strncat(s_scan_d_c, s_cal_data, 19);
+			strncat(s_scan_d_c, s_space, strlen(s_space));
+			strncat(s_scan_d_c, g_sBarCode, strlen(g_sBarCode));
+			strncat(s_scan_d_c, s_newline, strlen(s_newline));
+
+
+
+		//	Usart2_SendData(s_cal_data,strlen(s_cal_data));
+			Usart2_SendData(s_scan_d_c,strlen(s_scan_d_c));
+			Usart2_SendData(s_newline,strlen(s_newline));
+
+			memset(s_scan_d_c, 0, strlen(s_scan_d_c));
 		}
+
+
 
 		//*****************************************************************************
 		//Если тест NFC пройден успешно,то сканируем ID
@@ -1512,7 +1783,7 @@ void BTN_IRQHandler ( void ) {
 void Usart2Init(void) {
 	GPIO_InitTypeDef		GPIO_InitStruct;
 	USART_InitTypeDef		USART2_InitStruct;
-	//NVIC_InitTypeDef		NVIC_InitStruct;
+	NVIC_InitTypeDef		NVIC_InitStruct;
 
 	/* USART2 initialization: PA2 - USART2_TX, PA3 - USART2_RX */
 
@@ -1538,7 +1809,7 @@ void Usart2Init(void) {
 	USART_Init ( USART2_NUM, &USART2_InitStruct );
 
 	USART_Cmd ( USART2_NUM, ENABLE );
-/*
+
 	NVIC_PriorityGroupConfig ( NVIC_GROUP );
 	NVIC_InitStruct.NVIC_IRQChannel = USART2_IRQ;
 	NVIC_InitStruct.NVIC_IRQChannelCmd = ENABLE;
@@ -1547,9 +1818,11 @@ void Usart2Init(void) {
 	NVIC_Init ( &NVIC_InitStruct );
 
 	USART_ITConfig ( USART2_NUM, USART_IT_RXNE, ENABLE );
-*/
+
 }
 //******************************************************************
+
+
 //******************************************************************
 void Usart2_SendData (char* strcmd, int sz_cmd){
 //Передача на копьютер до символа окончания строки (0x00).

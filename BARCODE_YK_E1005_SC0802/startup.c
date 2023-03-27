@@ -20,6 +20,7 @@ static void NmiSR(void);
 static void IntDefaultHandler(void);
 static void TimingDelay_Decrement ( void );
 void USART_NUM_IRQHandler ( void );
+void USART2_IRQHandler (void);
 void BTN_IRQHandler ( void );
 void TIM1_IRQHandler(void);
 
@@ -108,7 +109,7 @@ void (* const g_pfnVectors[])(void) =
     IntDefaultHandler,						// SPI1 global interrupt
     IntDefaultHandler,						// SPI2 global interrupt
 	USART_NUM_IRQHandler,						// USART1 global interrupt
-    IntDefaultHandler,						// USART2 global interrupt
+	USART2_IRQHandler,						// USART2 global interrupt
     IntDefaultHandler,						// USART3 global interrupt
     IntDefaultHandler,						// EXTI Line[15:10] interrupts
     IntDefaultHandler,						// RTC Alarms (A and B) through EXTI line interrupt

@@ -22,9 +22,15 @@ M_CPU=cortex-m3
 CFLAGS=$(DEBUG) -I. \
 	-I ../Libraries/CMSIS/Include \
 	-I ../Libraries/SPL/inc \
+	-I ../Libraries/SPL/src \
+	-I ../Libraries/USB/inc \
+	-I ../Libraries/USB-FS/inc \
+	-I ../SD/inc \
+	-I ../RTC \
 	-mthumb \
 	-mcpu=$(M_CPU) $(OPTIM) \
 	-D STM32F10X_MD \
+	-D __weak=__attribute__((weak)) \
 	-T $(LDSCRIPT) -ggdb
 
 SOURCE=	main.c \
